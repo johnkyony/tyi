@@ -14,18 +14,9 @@ module Components
               ReactBootstrap::NavbarBrand() do
                 a(href: '/') { 'TYI' }
               end
-              ReactBootstrap::NavDropdown(
-                eventKey: 1,
-                title: 'Things',
-                id: :drop_down
-              ) do
-                (1..5).each do |n|
-                  ReactBootstrap::MenuItem(href: '#',
-                    key: n,
-                    eventKey: "1.#{n}"
-                  ) do
-                    "Number #{n}"
-                  end.on(:click) { say_hello(n) }
+              div.nav_form.navbar_right do 
+                div.form_group do 
+                  input.form_control(type: :text , placeholder: "enter your handle" )
                 end
               end
             end
