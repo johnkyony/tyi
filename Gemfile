@@ -20,7 +20,8 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 group :production do 
-gem 'pg'
+ gem 'pg'
+gem "rails_12factor"
 
 end
 # Use jquery as the JavaScript library
