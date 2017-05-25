@@ -10,8 +10,9 @@ module Components
         div do
           ReactBootstrap::Navbar(bsStyle: :inverse) do
             ReactBootstrap::Nav() do
+              
               ReactBootstrap::NavbarBrand() do
-                a(href: '') { 'HyperLoop Showcase' }
+                a(href: '/') { 'TYI' }
               end
               ReactBootstrap::NavDropdown(
                 eventKey: 1,
@@ -29,13 +30,7 @@ module Components
               end
             end
           end
-          div.container do
-            ReactPlayer(url: 'https://www.youtube.com/embed/FzCsDVfPQqk',
-              playing: true
-            )
-            br # line break
-            PlaneventsList()
-          end
+          
         end
       end
     end

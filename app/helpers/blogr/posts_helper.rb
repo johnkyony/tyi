@@ -1,0 +1,2 @@
+module Blogr::PostsHelper
+end

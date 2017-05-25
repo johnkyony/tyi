@@ -10,13 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170207171501) do
+ActiveRecord::Schema.define(version: 20170525145615) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "planevents", force: :cascade do |t|
     t.string   "planeventtitle"
     t.text     "description"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "published_at"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "synchromesh_connections", force: :cascade do |t|
@@ -30,6 +41,13 @@ ActiveRecord::Schema.define(version: 20170207171501) do
   create_table "synchromesh_queued_messages", force: :cascade do |t|
     t.text    "data"
     t.integer "connection_id"
+  end
+
+  create_table "titles", force: :cascade do |t|
+    t.text     "body"
+    t.datetime "published_at"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end
