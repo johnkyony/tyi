@@ -1,4 +1,4 @@
 .container 
   .row
     .col-lg-12
-      = render 'blogr/posts/blog_posts'
+      = react_component 'Home::tabs', {}, { prerender: false }
