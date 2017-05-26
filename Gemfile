@@ -34,7 +34,19 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'devise-bootstrap-views'
+gem "font-awesome-rails"
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', '>= 1.0.0.rc'
+gem 'cancancan'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.3.3'
+end
+gem 'haml-rails'
+gem "erb2haml", :group => :development
+gem 'devise'
+gem 'toastr-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
