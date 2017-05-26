@@ -4,6 +4,7 @@
 //= require toastr
 //= require tether
 //= require bootstrap-sprockets
+//= require side_navbar_animation
 //= require 'jquery_ujs'
 //= require 'webpack/client_only'
 

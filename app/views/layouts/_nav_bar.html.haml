@@ -1,28 +1,54 @@
-%nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
-  %button.navbar-toggler.navbar-toggler-right{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
-    %span.navbar-toggler-icon
-  %a.navbar-brand{:href => "#"} Navbar
-  #navbarSupportedContent.collapse.navbar-collapse
-    %ul.navbar-nav.mr-auto
-      %li.nav-item.active
-        %a.nav-link{:href => "#"}
-          Home
-          %span.sr-only (current)
+
+#wrapper
+  .overlay
+  / Sidebar
+  %nav#sidebar-wrapper.navbar.navbar-inverse.navbar-fixed-top{:role => "navigation"}
+    %ul.nav.sidebar-nav.flex-column
+      %li.sidebar-brand.nav-item
+        %a{:href => "#"}
+          Brand
       %li.nav-item
-        %a.nav-link{:href => "#"} Link
+        %a{:href => "#"} Home
       %li.nav-item
-        %a.nav-link.disabled{:href => "#"} Disabled
-    %form.form-inline.my-2.my-lg-0
-      %input.form-control.mr-sm-2{:placeholder => "Search", :type => "text"}/
-      %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"} Search
-    - if user_signed_in?
-      = link_to 'Edit account', edit_user_registration_path
-      = link_to 'Sign out', destroy_user_session_path, :method=>'delete'
-    - else
+        %a{:href => "#"} About
       %li.nav-item
-        = link_to 'Sign in', new_user_session_path
+        %a{:href => "#"} Events
       %li.nav-item
-        = link_to 'Sign up', new_user_registration_path
-    // - if user_signed_in?
-    //   - if current_user.admin?
-    //     li = link_to 'Users', users_path
+        %a{:href => "#"} Team
+      %li.dropdown.nav-item
+        %a.dropdown-toggle.nav-link{"data-toggle" => "dropdown", :href => "#"}
+          Works
+          %span.caret
+        %ul.dropdown-menu{:role => "menu"}
+          %li.dropdown-header Dropdown heading
+          %li.dropdown-item
+            %a{:href => "#"} Action
+          %li.dropdown-item
+            %a{:href => "#"} Another action
+          %li.dropdown-item
+            %a{:href => "#"} Something else here
+          %li.dropdown-item
+            %a{:href => "#"} Separated link
+          %li.dropdown-item
+            %a{:href => "#"} One more separated link
+      %li.nav-item
+        %a{:href => "#"} Services
+      %li.nav-item
+        %a{:href => "#"} Contact
+      %li.nav-item
+        %a{:href => "https://twitter.com/maridlcrmn"} Follow me
+  / /#sidebar-wrapper
+  / Page Content
+  #page-content-wrapper
+    %button.hamburger.is-closed{"data-toggle" => "offcanvas", :type => "button"}
+      %span.hamb-top
+      %span.hamb-middle
+      %span.hamb-bottom
+    .container
+      .row
+        .col-lg-8.col-lg-offset-2
+          = yield
+         
+          
+  / /#page-content-wrapper
+/ /#wrapper
