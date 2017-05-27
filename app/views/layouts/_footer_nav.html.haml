@@ -8,16 +8,17 @@
               TYI - The Young Independent
          
       .col-md-3.offset-md-3
-        %ul.nav.justify-content-end
-          %li.nav-item
-            %a.nav-link.active{:href => "#"} Top story
-          %li.nav-item
-            %a.nav-link{:href => "#"} Staff Pick 
-          %li.nav-item
-            %a.nav-link{:href => "#"} Bookmarks 
-          %li.nav-item
-            %a.nav-link{:href => "#"}= current_user.id
-        // %a.navbar-btn.btn-danger.btn.pull-right.col.align-self-end{:href => "/"}
-        //   %span.fa.fa-bookmark>
-        //   Bookmarks
-          
+        %ul.nav.justify-content-end.nav-pills.nav-fill.list-inline{:role => "tablist"}
+          %li.nav-item.list-inline-item
+            %a.nav-link.active{"data-toggle" => "pill", :href => "#top_stories", :role => "tab"} Top story
+          %li.nav-item.list-inline-item
+            %a.nav-link{"data-toggle" => "pill", :href => "#staff_pick", :role => "tab"} Staff Pick 
+          %li.nav-item.list-inline-item
+            %a.nav-link{"data-toggle" => "pill", :href => "#bookmarks", :role => "tab"} Bookmarks
+          %li.nav-item.list-inline-item
+            %a.nav-link{"data-toggle" => "pill", :href => "#messages", :role => "tab"} Messages
+          %li.nav-item.list-inline-item
+            %a.nav-link{"data-toggle" => "pill", :href => "#settings", :role => "tab"} @jkyony  
+            
+        
+         
