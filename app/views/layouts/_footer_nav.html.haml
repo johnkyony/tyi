@@ -3,16 +3,16 @@
     .row
       .col-md-5
         .container
-          %p.navbar-text.pull-left
+          .nav.justify-content-start.nav-pills.nav-fill.list-inline
             %h2
               TYI - The Young Independent
          
       .col-md-3.offset-md-3
         %ul.nav.justify-content-end.nav-pills.nav-fill.list-inline{:role => "tablist"}
           %li.nav-item.list-inline-item
-            %a.nav-link.active{"data-toggle" => "pill", :href => "#top_stories", :role => "tab"} Top story
+            %a.nav-link.active{"data-toggle" => "pill", :href => "./#top_stories", :role => "tab"} Top story
           %li.nav-item.list-inline-item
-            %a.nav-link{"data-toggle" => "pill", :href => "#staff_pick", :role => "tab"} Staff Pick 
+            %a.nav-link{"data-toggle" => "pill", :href => "./#staff_pick", :role => "tab"} Staff Pick 
          
           - if user_signed_in?
             - if current_user.editors_role?
@@ -22,12 +22,12 @@
               %li.nav-item.list-inline-item= link_to 'Write a post', new_blogr_post_path, class: "nav-link list-inline-item"
             
             %li.nav-item.list-inline-item
-              %a.nav-link{"data-toggle" => "pill", :href => "#messages", :role => "tab"} Conversations
+              %a.nav-link{"data-toggle" => "pill", :href => "./#messages", :role => "tab"} Conversations
             %li.nav-item.list-inline-item
-              %a.nav-link{"data-toggle" => "pill", :href => "#bookmarks", :role => "tab"} Bookmarks
+              %a.nav-link{"data-toggle" => "pill", :href => "./#bookmarks", :role => "tab"} Bookmarks
            
             %li.nav-item.list-inline-item
-              %a.nav-link{"data-toggle" => "pill", :href => "#settings", :role => "tab"} @jkyony  
+              %a.nav-link{"data-toggle" => "pill", :href => "./#settings", :role => "tab"} @jkyony  
           - else
             %li.nav-item.list-inline-item= link_to 'Sign in ' , new_user_session_path, class: "nav-link list-inline-item"
             %li.nav-item.list-inline-item= link_to 'Register' , new_user_registration_path, class: "nav-link list-inline-item"

@@ -5,12 +5,19 @@ class Blogr::PostsController < ApplicationController
    @current_blogr_tab = :index
    @posts = Post.drafts
   end
+  
+  def show 
+     @current_blogr_tab = :reading_mode 
+     @post = Post.find_by_id(params[:id])
+     
+  end
 
   def edit
   end
   def new 
     if current_user.writers_role? || current_user.editors_role 
-      @post = Post.new_draft_for(current_user)
+      @post = Post.new_draft_for(current_user).save_as_draft(params[:title] , params[:body])
+      
     else
       flash[:alert] = "Please enjoy the content while we produce it here"
       redirect_to :back

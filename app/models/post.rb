@@ -17,6 +17,8 @@
 
 class Post < ApplicationRecord
   belongs_to :user 
+  validates :user , presence: true 
+  validates :title , :body , uniqueness: true  
   
   def self.published
     where('published_at NOTNULL')
@@ -30,10 +32,11 @@ class Post < ApplicationRecord
     save
   end
 
-  def save_as_draft
+  def save_as_draft(title , body)
     self.published_at = nil
-    
-    save(validate: false)
+    self.title = title 
+    self.body = body
+    save(validate: true)
   end
 
   def unpublish
@@ -53,7 +56,7 @@ class Post < ApplicationRecord
   end
   def self.new_draft_for(user)
     post = self.new(user_id: user.id)
-    post.save_as_draft
+    # post.save_as_draft(post_params)
     post
   end  
   
@@ -69,4 +72,5 @@ class Post < ApplicationRecord
       end
     end
   end
+  
 end

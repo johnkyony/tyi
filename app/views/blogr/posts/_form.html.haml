@@ -1,4 +1,4 @@
-= simple_form_for @post , :url => new_blogr_post_path  do |f|
+= simple_form_for Post  do |f|
   = f.input :title , label: 'Please enter a title' , error: 'Title is mandotory please choose one , you can always change later'
   .medium-editable
     = f.input :body

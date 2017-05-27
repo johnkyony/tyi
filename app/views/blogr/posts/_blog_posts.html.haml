@@ -1,44 +1,22 @@
 .card-columns
-  - @posts.each do |post|
-    .card.card-inverse.card-primary
-      %img.card-img-top{:src => "http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif"}/
+  - @posts.each do |post| 
+    
+    .card.card-inverse.w-75{:style => "background-color: #333; border-color: #333;"}
       .card-block
-        %figure.profile
-          %img.profile-avatar{:alt => "", :src => "http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif"}/
-        %h4.card-title.mt-3
-          = post.title
-        // .meta
-        //   %a Friends
-        .card-text
-          = post.body
-      .card-footer
-        %small Last updated #{time_ago_in_words post.updated_at} ago
-        = link_to "Read", edit_blogr_post_path(post),class: "btn btn-secondary float-left btn-sm"
-        - if user_signed_in?
-          - if current_user.editors_role? || current_user.writers_role?
-            .btn-group.dropup
-             
-              %button.btn-sm.btn-secondary.dropdown-toggle.float-right{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
-                %span.sr-only Toggle Dropdown
-            
-                - if current_user.editors_role? || current_user.writers_role? 
-                  %p.blockquote-reverse Editors Actions
-                  
-                - elsif current_user.editors_role?
-                  %p.blockquote-reverse Editors Actions
-                - else current_user.writers_role?
-                  %p.blockquote-reverse Writers Actions
-              .dropdown-menu
-                = link_to 'Edit', edit_blogr_post_path(post),class: "dropdown-item"
-                = link_to 'Delete', blogr_post_path(post), method: :delete, data: { confirm: 'Are you sure?' },class: "dropdown-item"
-                
-               
-            
-              
-// .card.card-inverse{:style => "background-color: #333; border-color: #333;"}
-//   .card-block
-//     %h3.card-title Special title treatment
-//     %p.card-text With supporting text below as a natural lead-in to additional content.
-//     %a.btn.btn-primary{:href => "#"} Go somewhere      
+        %h3.card-title= post.title
+        %p.card-text= post.body
         
-
+         
+        .btn-group.dropup
+          
+          %button.btn-sm.btn-secondary.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+            %span.sr-only Toggle Dropdown
+            %p  Actions
+          .dropdown-menu
+            -if user_signed_in?
+              - if current_user.editors_role? || current_user.writers_role?
+                = link_to 'Edit', edit_blogr_post_path(post), class: "dropdown-item"
+                = link_to 'Delete', blogr_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: "dropdown-item"
+                = link_to "Read", blogr_post_path(post),class: "dropdown-item"   
+              - else 
+                = link_to "Read" , blogr_post_path(post) , class: "dropdown-item"
