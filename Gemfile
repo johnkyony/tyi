@@ -40,6 +40,12 @@ gem "font-awesome-rails"
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
 gem 'cancancan'
+group :development do
+  gem 'guard'
+  gem 'guard-livereload', '~> 2.5', require: false
+  gem "rack-livereload"
+  gem "better_errors"
+end
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end

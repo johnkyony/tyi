@@ -61,7 +61,12 @@ Rails.application.configure do
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
+  # Add Rack::LiveReload to the bottom of the middleware stack with the default options:
+  config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
+  # Specifying Rack::LiveReload options.
 
+  
+  # BetterErrors::Middleware.allow_ip! ENV[$IP] if ENV[$IP]
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 

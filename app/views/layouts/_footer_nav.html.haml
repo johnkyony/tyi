@@ -2,12 +2,22 @@
   .container
     .row
       .col-md-5
-        %p.navbar-text.pull-left
-          %h2
-            TYI - The Young Independent
+        .container
+          %p.navbar-text.pull-left
+            %h2
+              TYI - The Young Independent
          
       .col-md-3.offset-md-3
-        %a.navbar-btn.btn-danger.btn.pull-right.col.align-self-end{:href => "/"}
-          %span.fa.fa-bookmark>
-          Bookmarks
+        %ul.nav.justify-content-end
+          %li.nav-item
+            %a.nav-link.active{:href => "#"} Top story
+          %li.nav-item
+            %a.nav-link{:href => "#"} Staff Pick 
+          %li.nav-item
+            %a.nav-link{:href => "#"} Bookmarks 
+          %li.nav-item
+            %a.nav-link{:href => "#"}= current_user.id
+        // %a.navbar-btn.btn-danger.btn.pull-right.col.align-self-end{:href => "/"}
+        //   %span.fa.fa-bookmark>
+        //   Bookmarks
           
