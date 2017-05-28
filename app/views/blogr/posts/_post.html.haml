@@ -3,11 +3,11 @@
   .col-lg-12.post
     .container
       %h2
-        %p.ubuntu "#{@post.title}"
+        %p.ubuntu #{@post.title}
       .body-text
-        %p.text-muted.ubuntu By "#{@post.user.email}" | "#{@post.published_at}"
+        %p.text-muted.ubuntu By #{@post.user.email} | #{@post.published_at}
         %br/
         .row
           .col-lg-6
-            %p"#{@post.body}"
+            %p #{@post.body}
             
