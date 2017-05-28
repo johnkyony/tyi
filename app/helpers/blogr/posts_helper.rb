@@ -21,5 +21,5 @@ module Blogr::PostsHelper
       content_tag :div, "You don't have any posts here yet."
     end
   end
-    
+  
 end

@@ -1,0 +1,9 @@
+#page-content-wrapper
+  %button.hamburger.is-closed{"data-toggle" => "offcanvas", :type => "button"}
+    %span.hamb-top
+    %span.hamb-middle
+    %span.hamb-bottom
+  .container
+    .row
+      .col-lg-8.col-lg-offset-2
+        = yield

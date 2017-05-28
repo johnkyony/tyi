@@ -1,55 +1,58 @@
-
-#wrapper
-  .overlay
-  / Sidebar
-  %nav#sidebar-wrapper.navbar.navbar-inverse.navbar-fixed-top{:role => "navigation"}
-    %ul.nav.sidebar-nav.flex-column
-      %li.sidebar-brand.nav-item
-        = render 'layouts/logo_badge'
-       
-      %li.nav-item
-        %a{:href => "#"} Home
-      %li.nav-item
-        %a{:href => "#"} About
-      %li.nav-item
-        %a{:href => "#"} Events
-      %li.nav-item
-        %a{:href => "#"} Team
-      %li.dropdown.nav-item
-        %a.dropdown-toggle.nav-link{"data-toggle" => "dropdown", :href => "#"}
-          Works
-          %span.caret
-        %ul.dropdown-menu{:role => "menu"}
-          %li.dropdown-header Dropdown heading
-          %li.dropdown-item
-            %a{:href => "#"} Action
-          %li.dropdown-item
-            %a{:href => "#"} Another action
-          %li.dropdown-item
-            %a{:href => "#"} Something else here
-          %li.dropdown-item
-            %a{:href => "#"} Separated link
-          %li.dropdown-item
-            %a{:href => "#"} One more separated link
-      %li.nav-item
-        %a{:href => "#"} Services
-      %li.nav-item
-        %a{:href => "#"} Contact
-      %li.nav-item
-        %a{:href => "https://twitter.com/maridlcrmn"} Follow me
-  / /#sidebar-wrapper
-  / Page Content
-  = render 'layouts/page_content'
-  #page-content-wrapper
-    %button.hamburger.is-closed{"data-toggle" => "offcanvas", :type => "button"}
-      %span.hamb-top
-      %span.hamb-middle
-      %span.hamb-bottom
-    .container
-      .row
-        .col-lg-8.col-lg-offset-2
-          = yield
-         
-          
-  / /#page-content-wrapper
-/ /#wrapper
+.container-fluid
+  .row
+    .col-md-12
+      #wrapper
+        .overlay
+        / Sidebar
+        %nav#sidebar-wrapper.navbar.navbar-inverse.navbar-fixed-top{:role => "navigation"}
+          %ul.nav.sidebar-nav.flex-column
+            %li.sidebar-brand.nav-item
+              = render 'layouts/logo_badge'
+             
+            %li.nav-item
+              %a{:href => "#"} Home
+            %li.nav-item
+              %a{:href => "#"} About
+            %li.nav-item
+              %a{:href => "#"} Events
+            %li.nav-item
+              %a{:href => "#"} Team
+            %li.dropdown.nav-item
+              %a.dropdown-toggle.nav-link{"data-toggle" => "dropdown", :href => "#"}
+                Works
+                %span.caret
+              %ul.dropdown-menu{:role => "menu"}
+                %li.dropdown-header Dropdown heading
+                %li.dropdown-item
+                  %a{:href => "#"} Action
+                %li.dropdown-item
+                  %a{:href => "#"} Another action
+                %li.dropdown-item
+                  %a{:href => "#"} Something else here
+                %li.dropdown-item
+                  %a{:href => "#"} Separated link
+                %li.dropdown-item
+                  %a{:href => "#"} One more separated link
+            %li.nav-item
+              %a{:href => "#"} Services
+            %li.nav-item
+              %a{:href => "#"} Contact
+            %li.nav-item
+              %a{:href => "https://twitter.com/maridlcrmn"} Follow me
+        = render "layouts/top_right_nav"
+        / /#sidebar-wrapper
+        / Page Content
+        // = render 'layouts/page_content'
+        #page-content-wrapper
+          %button.hamburger.is-closed{"data-toggle" => "offcanvas", :type => "button"}
+            %span.hamb-top
+            %span.hamb-middle
+            %span.hamb-bottom
+          .container
+            .row
+              .col-lg-8.col-lg-offset-2
+                = yield
+               
+                
+        / /#page-content-wrapper
+      / /#wrapper

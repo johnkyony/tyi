@@ -18,7 +18,7 @@
 class Post < ApplicationRecord
   belongs_to :user 
   validates :user , presence: true 
-  validates :title , :body , uniqueness: true  
+  validates :title , :body , presence: true 
   
   def self.published
     where('published_at NOTNULL')
@@ -32,10 +32,11 @@ class Post < ApplicationRecord
     save
   end
 
-  def save_as_draft(title , body)
+  def save_as_draft(post_params)
     self.published_at = nil
-    self.title = title 
-    self.body = body
+    self.tilte = post_params.title
+    self.body = post_params.body
+    
     save(validate: true)
   end
 
@@ -54,9 +55,9 @@ class Post < ApplicationRecord
   def word_count
     words.size
   end
-  def self.new_draft_for(user)
+  def self.new_draft_for(user , post_params )
     post = self.new(user_id: user.id)
-    # post.save_as_draft(post_params)
+    post.save_as_draft(post_params)
     post
   end  
   
