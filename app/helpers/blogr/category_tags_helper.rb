@@ -1,0 +1,2 @@
+module Blogr::CategoryTagsHelper
+end

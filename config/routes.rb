@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
  
+
   namespace :readers do
     get 'home/index'
   end
@@ -15,15 +16,22 @@ Rails.application.routes.draw do
       registrations: 'users/registrations'
   }
  namespace :blogr do 
-  resources :posts do
-   get :public , :on => :collection 
-   member do
-    patch :publish
-    patch :unpublish
-   end 
+  resources :categories do 
+    resources :posts do 
+      get :public , :on => :collection 
+      member do 
+       patch :publish 
+       patch :unpublish 
+      end
+    end
+  end
+  resources :categories do 
+    resources :posts do 
+      resources :category_tags
+    end
   end
  end
   
   mount HyperMesh::Engine => '/rr'
- root to: "readers/home#index"
+ root to: "blogr/posts#index"
 end
