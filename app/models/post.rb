@@ -12,13 +12,18 @@
 #
 # Indexes
 #
-#  index_posts_on_user_id  (user_id)
+#  index_posts_on_category_id      (category_id)
+#  index_posts_on_category_tag_id  (category_tag_id)
+#  index_posts_on_user_id          (user_id)
 #
 
 class Post < ApplicationRecord
-  belongs_to :user 
-  validates :user , presence: true 
+  belongs_to :user , required: true
+  belongs_to :category , required: true
+  has_many   :category_tag 
+
   validates :title , :body , presence: true 
+ 
   
   def self.published
     where('published_at NOTNULL')

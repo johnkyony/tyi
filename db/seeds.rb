@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'csv'
+
+
+Category.delete_all
+CSV.foreach(Rails.root.join("db/seeds_data/category.csv"), headers: true) do |row|
+ Category.create(id: row[0] , name: row[1],created_at: row[2],updated_at: row[3])
+end

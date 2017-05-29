@@ -8,33 +8,12 @@
           %ul.nav.sidebar-nav.flex-column
             %li.sidebar-brand.nav-item
               = render 'layouts/logo_badge'
+            
+            - @categories.each do |category| 
+              %li.nav-item
+                %a{:href => "/blogr/categories/#{category.id}/posts"} #{category.name}
+            
              
-            %li.nav-item
-              %a{:href => "#"} Home
-            %li.nav-item
-              %a{:href => "#"} About
-            %li.nav-item
-              %a{:href => "#"} Events
-            %li.nav-item
-              %a{:href => "#"} Team
-            %li.dropdown.nav-item
-              %a.dropdown-toggle.nav-link{"data-toggle" => "dropdown", :href => "#"}
-                Works
-                %span.caret
-              %ul.dropdown-menu{:role => "menu"}
-                %li.dropdown-header Dropdown heading
-                %li.dropdown-item
-                  %a{:href => "#"} Action
-                %li.dropdown-item
-                  %a{:href => "#"} Another action
-                %li.dropdown-item
-                  %a{:href => "#"} Something else here
-                %li.dropdown-item
-                  %a{:href => "#"} Separated link
-                %li.dropdown-item
-                  %a{:href => "#"} One more separated link
-            %li.nav-item
-              %a{:href => "#"} Services
             %li.nav-item
               %a{:href => "#"} Contact
             %li.nav-item

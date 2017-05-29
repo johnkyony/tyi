@@ -2,19 +2,20 @@ class Blogr::PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   before_action :authorize_user, only: [:edit, :update, :destroy]
   def index
-  
-   @posts = Post.drafts
+   @categories = Category.all 
+   @posts = Post.where(category_id: params[:category_id] )
   end
   
   def show 
-    
-     @post = Post.find_by_id(params[:id])
+    @categories = Category.all 
+    @post = Post.find_by_id(params[:id])
      
   end
 
   def edit
   end
   def new 
+    @categories = Category.all 
     if current_user.writers_role? || current_user.editors_role 
       @post = Post.new
       
@@ -26,6 +27,7 @@ class Blogr::PostsController < ApplicationController
   end
   
   def create
+   
     @post = current_user.posts.build(post_params)
     @post.published_at = nil
     @post.user_id = current_user.id
@@ -37,6 +39,7 @@ class Blogr::PostsController < ApplicationController
     end
   end
   def public
+    @categories = Category.all 
     
     @posts = Post.published
     render :index

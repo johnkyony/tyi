@@ -14,5 +14,6 @@
 #
 
 class CategoryTag < ApplicationRecord
-  belongs_to :category
+  belongs_to :category , required: true
+  validates :name , presence: true
 end

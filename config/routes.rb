@@ -30,6 +30,14 @@ Rails.application.routes.draw do
       resources :category_tags
     end
   end
+  
+    resources :posts do 
+      get :public , :on => :collection 
+      member do 
+       patch :publish 
+       patch :unpublish 
+      end
+    end
  end
   
   mount HyperMesh::Engine => '/rr'
