@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
  
+  namespace :readers do
+    get 'home/index'
+  end
+
+  namespace :readers do
+    get 'home/show'
+  end
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, controllers: {
       sessions: 'users/sessions',
@@ -17,5 +25,5 @@ Rails.application.routes.draw do
  end
   
   mount HyperMesh::Engine => '/rr'
- root 'blogr/posts#index'
+ root to: "readers/home#index"
 end

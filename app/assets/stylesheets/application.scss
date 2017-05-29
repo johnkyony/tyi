@@ -7,6 +7,8 @@
 @import "default_layout";
 @import "default_card";
 
+@import "readers/home";
+
 .card-columns {
   @include media-breakpoint-only(lg) {
     column-count: 4;

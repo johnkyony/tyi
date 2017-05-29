@@ -7,7 +7,7 @@
             .col-md-5
               .container
                 .nav.justify-content-start.nav-pills.nav-fill.list-inline
-                  %h2
+                  %h2.font-italic
                     TYI - The Young Independent
                
             .col-md-3.offset-md-3
@@ -16,9 +16,8 @@
                
                 - if user_signed_in?
                   - if current_user.editors_role?
-                    %li.nav-item.list-inline-item
-                    %li.nav-item.list-inline-item= link_to_posts 'Drafts', :index, class: "nav-link list-inline-item"
-                    %li.nav-item.list-inline-item= link_to_posts 'Public', :public, class: "nav-link list-inline-item"
+                    %li.nav-item.list-inline-item= link_to_posts 'Drafts', :index
+                    %li.nav-item.list-inline-item= link_to_posts 'Public', :public
                     %li.nav-item.list-inline-item= link_to 'Write a post', new_blogr_post_path, class: "nav-link list-inline-item"
                   
                   %li.nav-item.list-inline-item

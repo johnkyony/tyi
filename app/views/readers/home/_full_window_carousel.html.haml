@@ -1,0 +1,36 @@
+%section.slide-wrapper
+  .container
+    #myCarousel.carousel.slide
+      / Indicators
+      %ol.carousel-indicators
+        %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel"}
+        %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
+        %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
+      / Wrapper for slides
+      .carousel-inner
+        .item.item1.active
+          .fill{:style => " background-color:#48c3af;"}
+            .inner-content
+              .carousel-img
+                %img.img.img-responsive{:alt => "sofa", :src => "http://vocefalandoingles.com/wp-content/uploads/2016/09/sofa.png"}/
+              .carousel-desc
+                %h2 Modern Designer Sofa
+                %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elit ipsum, scelerisque non semper eu, aliquet vel odio. Sed auctor id purus nec tristique. Donec euismod, urna vel dapibus tristique, dolor arcu ultrices lectus, nec pulvinar est turpis sit amet felis. Duis interdum purus quam, vitae cursus erat ornare at. Donec congue mi a ipsum tincidunt, imperdiet vehicula odio rutrum. Nam porta vulputate magna, id pretium lectus iaculis eu. Ut ut viverra libero.
+        .item.item2
+          .fill{:style => "background-color:#b33f4a;"}
+            .inner-content
+              .carousel-img
+                %img.img.img-responsive{:alt => "white-sofa", :src => "http://cdn.homedit.com/wp-content/uploads/2011/08/137CLUB2ST.png"}/
+              .carousel-desc
+                %h2 Vintage Style Sofa
+                %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elit ipsum, scelerisque non semper eu, aliquet vel odio. Sed auctor id purus nec tristique. Donec euismod, urna vel dapibus tristique, dolor arcu ultrices lectus, nec pulvinar est turpis sit amet felis. Duis interdum purus quam, vitae cursus erat ornare at. Donec congue mi a ipsum tincidunt, imperdiet vehicula odio rutrum. Nam porta vulputate magna, id pretium lectus iaculis eu. Ut ut viverra libero.
+        .item.item3
+          .fill{:style => "background-color:#7fc2f4;"}
+            .inner-content
+              .col-md-6
+                .carousel-img
+                  %img.img.img-responsive{:alt => "sofa", :src => "http://vocefalandoingles.com/wp-content/uploads/2016/09/sofa.png"}/
+              .col-md-6.text-left
+                .carousel-desc
+                  %h2 Stylish Sofa
+                  %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elit ipsum, scelerisque non semper eu, aliquet vel odio. Sed auctor id purus nec tristique. Donec euismod, urna vel dapibus tristique, dolor arcu ultrices lectus, nec pulvinar est turpis sit amet felis. Duis interdum purus quam, vitae cursus erat ornare at. Donec congue mi a ipsum tincidunt, imperdiet vehicula odio rutrum. Nam porta vulputate magna, id pretium lectus iaculis eu. Ut ut viverra libero.

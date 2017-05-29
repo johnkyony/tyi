@@ -2,12 +2,12 @@ class Blogr::PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   before_action :authorize_user, only: [:edit, :update, :destroy]
   def index
-   @current_blogr_tab = :index
+  
    @posts = Post.drafts
   end
   
   def show 
-     @current_blogr_tab = :reading_mode 
+    
      @post = Post.find_by_id(params[:id])
      
   end
@@ -37,7 +37,7 @@ class Blogr::PostsController < ApplicationController
     end
   end
   def public
-    @current_blogr_tab = :public
+    
     @posts = Post.published
     render :index
   end
