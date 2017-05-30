@@ -2,13 +2,15 @@
 #
 # Table name: posts
 #
-#  id           :integer          not null, primary key
-#  title        :string
-#  body         :text
-#  published_at :datetime
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
-#  user_id      :integer
+#  id              :integer          not null, primary key
+#  title           :string
+#  body            :text
+#  published_at    :datetime
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  user_id         :integer
+#  category_id     :integer
+#  category_tag_id :integer
 #
 # Indexes
 #

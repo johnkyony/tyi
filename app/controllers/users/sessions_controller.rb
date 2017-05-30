@@ -5,6 +5,10 @@ class Users::SessionsController < Devise::SessionsController
   # def new
   #   super
   # end
+  def new
+   @categories = Category.all
+   super
+  end
 
   # POST /resource/sign_in
   # def create

@@ -15,12 +15,6 @@
 #  last_sign_in_ip        :inet
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  superadmin_role        :boolean          default("false")
-#  supervisor_role        :boolean          default("false")
-#  user_role              :boolean          default("true")
-#  editors_role           :boolean          default("false")
-#  writers_role           :boolean          default("false")
-#  dev_role               :boolean          default("false")
 #
 # Indexes
 #

@@ -6,6 +6,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def new
   #   super
   # end
+  def new 
+   @categories = Category.all 
+   super
+  end
 
   # POST /resource
   # def create

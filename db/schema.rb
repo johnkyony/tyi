@@ -50,19 +50,6 @@ ActiveRecord::Schema.define(version: 20170529155337) do
     t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
   end
 
-  create_table "synchromesh_connections", force: :cascade do |t|
-    t.string   "channel"
-    t.string   "session"
-    t.datetime "created_at"
-    t.datetime "expires_at"
-    t.datetime "refresh_at"
-  end
-
-  create_table "synchromesh_queued_messages", force: :cascade do |t|
-    t.text    "data"
-    t.integer "connection_id"
-  end
-
   create_table "titles", force: :cascade do |t|
     t.text     "body"
     t.datetime "published_at"
