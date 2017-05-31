@@ -7,7 +7,7 @@
 //= require 'side_navbar_animation'
 //= require 'medium-editor'
 //= require 'post_form_editor'
-//= requrie 'full_width_carousel'
+//= require 'bootstrap-touch-slider'
 //= require 'jquery_ujs'
 //= require 'webpack/client_only'
 

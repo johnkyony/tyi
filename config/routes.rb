@@ -41,5 +41,5 @@ Rails.application.routes.draw do
  end
   
   mount HyperMesh::Engine => '/rr'
- root to: "blogr/posts#index"
+ root to: "readers/home#index"
 end
