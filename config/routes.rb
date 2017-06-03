@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
  
 
+  resources :bookmarks
+
   namespace :readers do
     get 'home/index'
+    root to: "readers/home#index"
+    
   end
 
   namespace :readers do
@@ -19,6 +23,7 @@ Rails.application.routes.draw do
   resources :categories do 
     resources :posts do 
       get :public , :on => :collection 
+     
       member do 
        patch :publish 
        patch :unpublish 
@@ -32,10 +37,12 @@ Rails.application.routes.draw do
   end
   
     resources :posts do 
-      get :public , :on => :collection 
-      member do 
-       patch :publish 
-       patch :unpublish 
+      resources :bookmarks do 
+        get :public , :on => :collection 
+        member do 
+         patch :publish 
+         patch :unpublish 
+        end
       end
     end
  end

@@ -1,26 +1,30 @@
-.container
-  = render 'readers/home/full_window_carousel'
-  .card-columns
-    - @posts.each do |post| 
-      .col-md-10
-        .card.card-inverse{:style => "background-color: #333; border-color: #333;"}
-          
-          .card-block
-            %h3.card-title= post.title
-            .col-md-8
-              %p.card-text= truncate post.body, length: 140
-            
-             
-              .btn-group.dropup
+.row 
+  .container
+    .row
+      .col-md-12
+        .card-columns
+          - @posts.each do |post| 
+            .col-md-10
+              .card.card-inverse{:style => "background-color: #333; border-color: #333;"}
                 
-                %button.btn-sm.btn-secondary.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
-                  %span.sr-only Toggle Dropdown
-                  %p  Actions
-                .dropdown-menu
-                  -if user_signed_in?
-                    - if current_user.editors_role? || current_user.writers_role?
-                      = link_to 'Edit', edit_blogr_post_path(post), class: "dropdown-item"
-                      = link_to 'Delete', blogr_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: "dropdown-item"
-                      = link_to "Read", blogr_post_path(post),class: "dropdown-item"   
-                    - else 
-                      = link_to "Read" , blogr_post_path(post) , class: "dropdown-item"
+                .card-block
+                  %h3.card-title= post.title
+                  .col-md-8
+                    %p.card-text= truncate post.body, length: 140
+                  
+                   
+                    .btn-group.dropup
+                      
+                      %button.btn-sm.btn-secondary.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+                        %span.sr-only Toggle Dropdown
+                        %p  Actions
+                      .dropdown-menu
+                        -if user_signed_in?
+                          - if current_user.editors_role? || current_user.writers_role?
+                            = link_to 'Edit', edit_blogr_post_path(post), class: "dropdown-item"
+                            = link_to 'Delete', blogr_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: "dropdown-item"
+                            = link_to "Read", blogr_post_path(post),class: "dropdown-item"   
+                            = link_to "Bookmark" , blogr_post_bookmarks_path(post) , class: "dropdown-item" , method: :post
+                          - else 
+                            = link_to "Read" , blogr_post_path(post) , class: "dropdown-item"
+                            = link_to "Bookmark" , blogr_post_bookmarks_path(post) , class: "dropdown-item" , method: :post

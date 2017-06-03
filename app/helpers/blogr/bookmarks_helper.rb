@@ -1,0 +1,2 @@
+module Blogr::BookmarksHelper
+end
