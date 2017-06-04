@@ -17,6 +17,7 @@ module Components
         before_mount do
           # any initialization particularly of state variables goes here.
           # this will execute on server (prerendering) and client.
+          @posts = Post.all 
         end
 
         after_mount do
@@ -33,7 +34,17 @@ module Components
         end
 
         def render
-          
+          ReactBootstrap::Carousel(bsClass: 'carousel' , controls: "true" , indicators: "true" , interval: "5000"  ) do 
+            Post.all.each do |post|
+              ReactBootstrap::Carousel.Item(active: "true" , animateIn: "true", animateOut: "false" ) do 
+                ReactBootstrap::Carousel.Caption do 
+                  h2"#{post.title}"
+                  p"#{post.body}"
+                end
+                
+              end
+            end
+          end
         end
       end
     end

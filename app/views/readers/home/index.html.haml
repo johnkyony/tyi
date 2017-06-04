@@ -1,7 +1,12 @@
 .container
   .row
     .col-md-12
-      // = react_component 'Home::Show', {}, { prerender: true }
+      .col-md-6
+        = react_component 'Readers::Home::FullWindowCarousel', {}, { prerender: true }
       .row
         .col-md-6
           = render 'blogr/posts/blog_posts'
+          
+          
+          
+     
