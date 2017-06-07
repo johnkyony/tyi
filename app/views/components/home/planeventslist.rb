@@ -9,7 +9,7 @@ module Components
       before_mount do
         # note that this will lazy load posts
         # and only the fields that are needed will be requested
-        @planevents = Planevent.all
+        @planevents = Planevent.all 
         @planevent_attributes = Hash[ 'planeventtitle' => 'Event Name', 'description' => 'Description']
       end
 
