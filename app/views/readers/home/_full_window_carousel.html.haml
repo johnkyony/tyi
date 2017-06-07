@@ -1,56 +1,18 @@
-#bootstrap-touch-slider.carousel.bs-slider.slide.control-round.indicators-line{"data-interval" => "5000", "data-pause" => "hover", "data-ride" => "carousel"}
-  / Indicators
+#carouselExampleIndicators.carousel.slide{"data-ride" => "carousel"}
   %ol.carousel-indicators
-    %li.active{"data-slide-to" => "0", "data-target" => "#bootstrap-touch-slider"}
-    %li{"data-slide-to" => "1", "data-target" => "#bootstrap-touch-slider"}
-    %li{"data-slide-to" => "2", "data-target" => "#bootstrap-touch-slider"}
-  / Wrapper For Slides
+    %li.active{"data-slide-to" => "0", "data-target" => "#carouselExampleIndicators"}
+    %li{"data-slide-to" => "1", "data-target" => "#carouselExampleIndicators"}
+    %li{"data-slide-to" => "2", "data-target" => "#carouselExampleIndicators"}
   .carousel-inner{:role => "listbox"}
-    / Third Slide
-    .item.active
-      / Slide Background
-      %img.slide-image{:alt => "Bootstrap Touch Slider", :src => "https://images.pexels.com/photos/48726/pexels-photo-48726.jpeg?w=940&h=650&auto=compress&cs=tinysrgb"}/
-      .bs-slider-overlay
-      .container
-        .row
-          / Slide Text Layer
-          .slide-text.slide_style_left
-            %h1{"data-animation" => "animated zoomInRight"} Bootstrap Carousel
-            %p{"data-animation" => "animated fadeInLeft"} Bootstrap carousel now touch enable slide.
-            %a.btn.btn-default{"data-animation" => "animated fadeInLeft", :href => "http://bootstrapthemes.co/", :target => "_blank"} select one
-            %a.btn.btn-primary{"data-animation" => "animated fadeInRight", :href => "http://bootstrapthemes.co/", :target => "_blank"} select two
-    / End of Slide
-    / Second Slide
-    .item
-      / Slide Background
-      %img.slide-image{:alt => "Bootstrap Touch Slider", :src => "https://images.pexels.com/photos/207990/pexels-photo-207990.jpeg?w=940&h=650&auto=compress&cs=tinysrgb"}/
-      .bs-slider-overlay
-      / Slide Text Layer
-      .slide-text.slide_style_center
-        %h1{"data-animation" => "animated flipInX"} Bootstrap touch slider
-        %p{"data-animation" => "animated lightSpeedIn"} Make Bootstrap Better together.
-        %a.btn.btn-default{"data-animation" => "animated fadeInUp", :href => "http://bootstrapthemes.co/", :target => "_blank"} select one
-        %a.btn.btn-primary{"data-animation" => "animated fadeInDown", :href => "http://bootstrapthemes.co/", :target => "_blank"} select two
-    / End of Slide
-    / Third Slide
-    .item
-      / Slide Background
-      %img.slide-image{:alt => "Bootstrap Touch Slider", :src => "https://images.pexels.com/photos/144345/pexels-photo-144345.jpeg?w=940&h=650&auto=compress&cs=tinysrgb"}/
-      .bs-slider-overlay
-      / Slide Text Layer
-      .slide-text.slide_style_right
-        %h1{"data-animation" => "animated zoomInLeft"} Beautiful Animations
-        %p{"data-animation" => "animated fadeInRight"} Lots of css3 Animations to make slide beautiful .
-        %a.btn.btn-default{"data-animation" => "animated fadeInLeft", :href => "http://bootstrapthemes.co/", :target => "_blank"} select one
-        %a.btn.btn-primary{"data-animation" => "animated fadeInRight", :href => "http://bootstrapthemes.co/", :target => "_blank"} select two
-    / End of Slide
-  / End of Wrapper For Slides
-  / Left Control
-  %a.left.carousel-control{"data-slide" => "prev", :href => "#bootstrap-touch-slider", :role => "button"}
-    %span.fa.fa-angle-left{"aria-hidden" => "true"}
+    .carousel-item.active
+      %img.d-block.img-fluid{:alt => "First slide", :src => "..."}/
+    .carousel-item
+      %img.d-block.img-fluid{:alt => "Second slide", :src => "..."}/
+    .carousel-item
+      %img.d-block.img-fluid{:alt => "Third slide", :src => "..."}/
+  %a.carousel-control-prev{"data-slide" => "prev", :href => "#carouselExampleIndicators", :role => "button"}
+    %span.carousel-control-prev-icon{"aria-hidden" => "true"}
     %span.sr-only Previous
-  / Right Control
-  %a.right.carousel-control{"data-slide" => "next", :href => "#bootstrap-touch-slider", :role => "button"}
-    %span.fa.fa-angle-right{"aria-hidden" => "true"}
+  %a.carousel-control-next{"data-slide" => "next", :href => "#carouselExampleIndicators", :role => "button"}
+    %span.carousel-control-next-icon{"aria-hidden" => "true"}
     %span.sr-only Next
-/ End  bootstrap-touch-slider Slider
