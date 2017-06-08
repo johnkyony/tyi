@@ -8,32 +8,16 @@ module Components
 
     def render
       div do
-        ReactBootstrap::Navbar(bsStyle: :inverse) do
-          ReactBootstrap::Nav() do
-            ReactBootstrap::NavbarBrand() do
-              a(href: '#') { 'Hyperloop Showcase' }
-            end
-            ReactBootstrap::NavDropdown(
-              eventKey: 1,
-              title: 'Things',
-              id: :drop_down
-            ) do
-              (1..5).each do |n|
-                ReactBootstrap::MenuItem(href: '#',
-                  key: n,
-                  eventKey: "1.#{n}"
-                ) do
-                  "Number #{n}"
-                end.on(:click) { say_hello(n) }
+        ReactBootstrap::Carousel(bsClass: 'carousel' , controls: true , indicators: true) do
+              Post.all.each do |post|
+                ReactBootstrap::Carousel.Item(active: true , animateIn: true , animateOut: true ) do 
+                  ReactBootstrap::Carousel.Caption do 
+                    h3 "#{post.title}" 
+                    p "#{truncate post.body, length: 140}"
+                  end
+                end
               end
             end
-          end
-        end
-        div.container do
-          ReactPlayer(url: 'https://www.youtube.com/embed/FzCsDVfPQqk',
-            playing: true
-          )
-        end
       end
     end
   end
