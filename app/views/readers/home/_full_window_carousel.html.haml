@@ -1,18 +1,9 @@
-#carouselExampleIndicators.carousel.slide{"data-ride" => "carousel"}
-  %ol.carousel-indicators
-    %li.active{"data-slide-to" => "0", "data-target" => "#carouselExampleIndicators"}
-    %li{"data-slide-to" => "1", "data-target" => "#carouselExampleIndicators"}
-    %li{"data-slide-to" => "2", "data-target" => "#carouselExampleIndicators"}
-  .carousel-inner{:role => "listbox"}
-    .carousel-item.active
-      %img.d-block.img-fluid{:alt => "First slide", :src => "..."}/
-    .carousel-item
-      %img.d-block.img-fluid{:alt => "Second slide", :src => "..."}/
-    .carousel-item
-      %img.d-block.img-fluid{:alt => "Third slide", :src => "..."}/
-  %a.carousel-control-prev{"data-slide" => "prev", :href => "#carouselExampleIndicators", :role => "button"}
-    %span.carousel-control-prev-icon{"aria-hidden" => "true"}
-    %span.sr-only Previous
-  %a.carousel-control-next{"data-slide" => "next", :href => "#carouselExampleIndicators", :role => "button"}
-    %span.carousel-control-next-icon{"aria-hidden" => "true"}
-    %span.sr-only Next
+.carousel.carousel-slider.center{"data-indicators" => "true"}
+  .carousel-fixed-item.center
+    %a.btn.waves-effect.white.grey-text.darken-text-2 button
+  - @posts.each do |post| 
+    .carousel-item.red.white-text{:href => "#one!"}
+      %h2= post.title
+      %p.white-text= truncate post.body, length: 50
+    .carousel-fixed-item.center
+      %a.btn.waves-effect.white.grey-text.darken-text-2{:href => "/blogr/posts/#{post.id}"} Read More

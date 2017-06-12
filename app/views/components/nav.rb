@@ -2,9 +2,7 @@ module Components
   
   class Nav < React::Component::Base
 
-    def say_hello(i)
-      alert "Hello from number #{i}"
-    end
+    
 
     def render
       div do

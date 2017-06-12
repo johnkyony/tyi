@@ -8,10 +8,16 @@
    
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
+    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css", :rel => "stylesheet"}/
+    %link{:href => "https://fonts.googleapis.com/icon?family=Material+Icons", :rel => "stylesheet"}/
+    / Compiled and minified JavaScript
+    %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"}
+    %script{:src => "https://use.fontawesome.com/e42ef58982.js"}
+    
+
   %body
-    = render 'layouts/nav_bar'
-    %footer
-      = render 'layouts/footer_nav'
+    = render 'layouts/app_layout'
+    = render 'layouts/footer_nav'
           
           
          

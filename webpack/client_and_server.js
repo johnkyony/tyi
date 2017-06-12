@@ -3,3 +3,4 @@ ReactDOM = require('react-dom')
 React = require('react')
 ReactPlayer = require('react-player')
 ReactBootstrap = require('react-bootstrap')
+jquery = require("jquery");

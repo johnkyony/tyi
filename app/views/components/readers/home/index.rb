@@ -13,7 +13,7 @@ module Components
         # The following are the most common lifecycle call backs,
         # the following are the most common lifecycle call backs# delete any that you are not using.
         # call backs may also reference an instance method i.e. before_mount :my_method
-
+        param :post , type: [hash]
         before_mount do
           # any initialization particularly of state variables goes here.
           # this will execute on server (prerendering) and client.

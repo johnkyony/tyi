@@ -1,0 +1,11 @@
+= render 'layouts/nav_bar'
+/ Page Layout here
+.row
+  .col.s12.m4.l3
+
+    .collection
+      - @categories.each do |category| 
+        %a.collection-item{:href => "/blogr/categories/#{category.id}/posts"} #{category.name}
+  .col.s12.m8.l9
+    = yield
+    

@@ -1,55 +1,7 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
-@import "bootstrap";
-@import "toastr";
-@import "font-awesome";
-@import "medium-editor/medium-editor";
+
 
 @import "default_layout";
-@import "default_card";
+
 
 @import "readers/home";
-
-.card-columns {
-  @include media-breakpoint-only(lg) {
-    column-count: 4;
-  }
-  @include media-breakpoint-only(xl) {
-    column-count: 5;
-  display: inline-block
-  }
-}
-
-html {
-  font-size: 14px;
-}
-
-@include media-breakpoint-up(sm) {
-  html {
-    font-size: 16px;
-  }
-}
-
-@include media-breakpoint-up(md) {
-  html {
-    font-size: 20px;
-  }
-}
-
-@include media-breakpoint-up(lg) {
-  html {
-    font-size: 28px;
-  }
-}
-$font-family-sans-serif:
-  // Safari for OS X and iOS (San Francisco)
-  -apple-system,
-  // Chrome >= 56 for OS X (San Francisco), Windows, Linux and Android
-  system-ui,
-  // Chrome < 56 for OS X (San Francisco)
-  BlinkMacSystemFont,
-  // Windows
-  "Segoe UI",
-  // Android
-  "Roboto",
-  // Basic web fallback
-  "Helvetica Neue", Arial, sans-serif !default;
