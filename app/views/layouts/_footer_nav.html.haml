@@ -2,25 +2,24 @@
   .container
     .row
       .col.l6.s12
-        %h5.white-text Footer Content
-        %p.grey-text.text-lighten-4 You can use rows and columns here to organize your footer content.
+        %h5.white-text
+        %p.grey-text.text-lighten-4
       .col.l4.offset-l2.s12
-        %h5.white-text Links
         %ul
           - if user_signed_in?
             - if current_user.editors_role?
-              %li.nav-item.list-inline-item= link_to_posts 'Drafts', :index
-              %li.nav-item.list-inline-item= link_to_posts 'Public', :public
-              %li.nav-item.list-inline-item= link_to 'Write a post', new_blogr_post_path, class: "nav-link list-inline-item"
+              %li.right= link_to_posts 'Drafts', :index
+              %li.right= link_to_posts 'Public', :public
+              %li.right= link_to 'Write a post', new_blogr_post_path, class: "nav-link list-inline-item"
             
-            %li.nav-item.list-inline-item
-              %a.nav-link{"data-toggle" => "pill", :href => "./#messages", :role => "tab"} Conversations
+            %li
+              %a.right{:href => "./#messages"} Conversations
             
-            %li.nav-item.list-inline-item
-              %a.nav-link{"data-toggle" => "pill", :href => "./#settings", :role => "tab"} @jkyony  
+            %li
+              %a.right{ :href => "./#settings"} @jkyony  
           - else
-            %li.nav-item.list-inline-item= link_to 'Sign in ' , new_user_session_path, class: "nav-link list-inline-item"
-            %li.nav-item.list-inline-item= link_to 'Register' , new_user_registration_path, class: "nav-link list-inline-item"
+            %li= link_to 'Sign in ' , new_user_session_path, class: "right"
+            %li= link_to 'Register' , new_user_registration_path, class: "right"
                          
   .footer-copyright
     .container

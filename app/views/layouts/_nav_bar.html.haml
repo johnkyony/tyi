@@ -1,17 +1,26 @@
-%nav
+%nav.nav-extended
   .nav-wrapper
     = render 'layouts/logo_badge'
-    // %a.brand-logo{:href => "#!"} Logo
-    %a.button-collapse{"data-activates" => "mobile-demo", :href => "/"}
+    %a.button-collapse{"data-activates" => "mobile-demo", :href => "#"}
       %i.material-icons menu
-    %ul.right.hide-on-med-and-down
-     
+    %ul#nav-mobile.right.hide-on-med-and-down
+      %li
+        %a{:href => "sass.html"} Top Stories
+      %li
+        %a{:href => "badges.html"} Staff Pick
+      %li
+        %a{:href => "collapsible.html"} Bookmarks
     %ul#mobile-demo.side-nav
       - @categories.each do |category| 
         %li
           %a{:href => "/blogr/categories/#{category.id}/posts"} #{category.name}
-      %li.nav-item
-        %a{:href => "#"} Contact
-      %li.nav-item
-        %a{:href => "https://twitter.com/maridlcrmn"} Follow me
-
+        %li
+          %a{:href => "#"} Contact
+        %li
+          %a{:href => "https://twitter.com/maridlcrmn"} Follow me
+     
+  .nav-content
+    %ul.tabs.tabs-transparent
+      - @categories.each do |category| 
+        %li.tab
+          %a{:href => "/blogr/categories/#{category.id}/posts"} #{category.name}
