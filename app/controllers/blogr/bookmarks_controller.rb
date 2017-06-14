@@ -1,22 +1,19 @@
 class Blogr::BookmarksController < ApplicationController
   def index
-    @bookmarks Bookmark.where(user_id: current_user.id)
+    posts = Bookmark.where(bookmarker_id: current_user.id).pluck(:bookmarkee_id)
+    @bookmarks = Post.where(id: posts)
   end
   
   def new 
-    @bookmark = Bookmark.new
+   
   end
   
   def create
-    @bookmark = current_user.bookmarks.build(post_params)
-    if @bookmark.save!
-      flash[:notice] = "The bookmark has been saved"
-      redirect_to :back 
-    else
-      flash[:notice] = "This bookmark has been saved before"
-      redirect_to :back 
-      
-    end
+    @post = Post.find_by_id(params[:post_id])
+    user = User.find_by_id(current_user.id)
+    bookmark = user.bookmark(@post)
+    redirect_to :back 
+   
     
   end
   

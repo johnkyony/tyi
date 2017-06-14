@@ -1,0 +1,21 @@
+.masonry-grid {
+ -moz-column-width: 20vw;
+ -webkit-column-width: 20vw;
+ -moz-column-gap: 0.5em;
+ -webkit-column-gap: 0.5em; 
+  
+  
+  .masonry-grid--item {
+         display: inline-block;
+         margin:  0.25rem;
+         padding:  1rem;
+         width:  100%; 
+          cursor:ponter;
+          position:relative;
+        }
+}
+
+
+.card {
+   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}

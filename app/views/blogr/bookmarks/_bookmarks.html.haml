@@ -1,0 +1,23 @@
+- @bookmarks.each do |post| 
+
+  .card.medium.sticky-action
+    .card-image.waves-effect.waves-block.waves-light
+      %img.activator{:src => "http://tyi.co.za/wp-content/uploads/2017/06/53324618untitled-640x724.png"}/
+    .card-content
+      %span.card-title.activator.grey-text.text-darken-4
+        #{post.title}
+        %i.material-icons.right more_vert
+     
+    .card-action
+      = link_to " " , blogr_post_bookmarks_path(post.id) , method: :post , class: "fa fa-bookmark-o fa-2x"
+      = link_to  " " ,blogr_post_path(post.id) , class: "fa fa-arrow-right fa-2x"
+    .card-reveal
+      %span.card-title.grey-text.text-darken-4
+        #{post.title}
+        %i.material-icons.right close
+      %h5= truncate post.body, length: 140
+      %p= link_to 'Read More' , blogr_post_path(post.id) 
+      
+
+
+

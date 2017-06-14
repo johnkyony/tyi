@@ -10,18 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170603111815) do
+ActiveRecord::Schema.define(version: 20170613110943) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookmarks", force: :cascade do |t|
-    t.integer  "post_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_bookmarks_on_post_id", using: :btree
-    t.index ["user_id"], name: "index_bookmarks_on_user_id", using: :btree
+    t.string   "bookmarkee_type"
+    t.integer  "bookmarkee_id"
+    t.string   "bookmarker_type"
+    t.integer  "bookmarker_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["bookmarkee_id", "bookmarkee_type", "bookmarker_id", "bookmarker_type"], name: "bookmarks_bookmarkee_bookmarker_idx", unique: true, using: :btree
+    t.index ["bookmarkee_id", "bookmarkee_type"], name: "bookmarks_bookmarkee_idx", using: :btree
+    t.index ["bookmarkee_type", "bookmarkee_id"], name: "index_bookmarks_on_bookmarkee_type_and_bookmarkee_id", using: :btree
+    t.index ["bookmarker_id", "bookmarker_type"], name: "bookmarks_bookmarker_idx", using: :btree
+    t.index ["bookmarker_type", "bookmarker_id"], name: "index_bookmarks_on_bookmarker_type_and_bookmarker_id", using: :btree
   end
 
   create_table "categories", force: :cascade do |t|
@@ -102,8 +107,6 @@ ActiveRecord::Schema.define(version: 20170603111815) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "bookmarks", "posts"
-  add_foreign_key "bookmarks", "users"
   add_foreign_key "category_tags", "categories"
   add_foreign_key "posts", "categories"
   add_foreign_key "posts", "category_tags"

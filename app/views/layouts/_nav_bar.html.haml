@@ -5,11 +5,11 @@
       %i.material-icons menu
     %ul#nav-mobile.right.hide-on-med-and-down
       %li
-        %a{:href => "sass.html"} Top Stories
+        %a{:href => "/topstories/index"} Top Stories
       %li
-        %a{:href => "badges.html"} Staff Pick
+        %a{:href => "/staffpick/index"} Staff Pick
       %li
-        %a{:href => "collapsible.html"} Bookmarks
+        %a{:href => "/blogr/bookmarks"} Bookmarks
     %ul#mobile-demo.side-nav
       - @categories.each do |category| 
         %li
@@ -24,3 +24,4 @@
       - @categories.each do |category| 
         %li.tab
           %a{:href => "/blogr/categories/#{category.id}/posts"} #{category.name}
+     

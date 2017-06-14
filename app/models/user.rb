@@ -35,7 +35,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
    after_create :send_admin_mail
   has_many :posts
-  has_many :bookmarks
+  act_as_bookmarker
   def send_admin_mail
     UserMailer.send_welcome_email(self).deliver_later
   end

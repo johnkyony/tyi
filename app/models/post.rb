@@ -23,6 +23,7 @@ class Post < ApplicationRecord
   belongs_to :user , required: true
   belongs_to :category , required: true
   has_many   :category_tag 
+  act_as_bookmarkee
 
   validates :title , :body , presence: true 
  

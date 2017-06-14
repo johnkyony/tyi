@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
  
 
+  get 'staffpick/index'
+
+  get 'topstories/index'
+
   resources :bookmarks
 
   namespace :readers do
+    
     get 'home/index'
     root to: "readers/home#index"
     
@@ -14,11 +19,7 @@ Rails.application.routes.draw do
   end
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users, controllers: {
-      sessions: 'users/sessions',
-      passwords: 'users/passwords',
-      registrations: 'users/registrations'
-  }
+  devise_for :users
  namespace :blogr do 
   resources :categories do 
     resources :posts do 
@@ -45,6 +46,7 @@ Rails.application.routes.draw do
         end
       end
     end
+    resources :bookmarks
  end
   
   mount HyperMesh::Engine => '/rr'

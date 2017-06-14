@@ -3,14 +3,6 @@
     %ul.tabs
       - @categories.each do |category| 
         %li.tab.col.s3
-          %a{:href => "/blogr/categories/#{category.id}/posts"} #{category.name}
-  //     %li.tab.col.s3
-  //       %a.active{:href => "#test2"} Test 2
-  //     %li.tab.col.s3.disabled
-  //       %a{:href => "#test3"} Disabled Tab
-  //     %li.tab.col.s3
-  //       %a{:href => "#test4"} Test 4
-  // #test1.col.s12 Test 1
-  // #test2.col.s12 Test 2
-  // #test3.col.s12 Test 3
-  // #test4.col.s12 Test 4
+          %a{:href => "/blogr/categories/#{category.id}/posts" , :target => "#blog_posts"} #{category.name}
+          
+  

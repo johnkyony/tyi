@@ -2,12 +2,24 @@ class Blogr::PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   before_action :authorize_user, only: [:edit, :update, :destroy]
   def index
- 
+    respond_to do |f|
+      f.html { redirect_to tasks_url }
+      f.js
+    end
     if params[:category_id] != nil
      
      @posts = Post.where(category_id: params[:category_id] )
+     respond_to do |f|
+      f.html { redirect_to blogr_category_posts(params[:category_id]) }
+      f.js
+    end
    else
-     @posts = Post.all 
+    @posts = Post.all 
+    respond_to do |f|
+      
+      f.js
+    end
+    
    end
   end
   
