@@ -1,6 +1,19 @@
 = render 'layouts/nav_bar'
 / Page Layout here
 .row
-  .col.s12.m12.l12
-    = yield
+  .col.s12.m4.l3
+    .row
+      .col.s11.m3.l2
+        - if user_signed_in? 
+          %h5 Chatrooms
+          %ul
+            - current_user.chatrooms.each do |chatroom|
+              %li= link_to chatroom.name , chatroom
+          
+
+    
+  .col.s12.m8.l9
+    .row
+      .col.s11.m7.l8
+        = yield
     

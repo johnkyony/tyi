@@ -2,6 +2,7 @@
 //= require 'react_ujs'
 //= require 'jquery'
 //= require 'full_width_carousel'
+//= require 'chatroom'
 //= require 'jquery_ujs'
 //= require 'webpack/client_only'
 

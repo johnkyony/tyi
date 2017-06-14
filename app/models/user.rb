@@ -36,6 +36,9 @@ class User < ApplicationRecord
    after_create :send_admin_mail
   has_many :posts
   act_as_bookmarker
+  has_many :chatroom_users
+  has_many :chatrooms , through: :chatroom_users
+  has_many :messages
   def send_admin_mail
     UserMailer.send_welcome_email(self).deliver_later
   end

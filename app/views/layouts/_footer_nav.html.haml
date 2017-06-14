@@ -13,7 +13,7 @@
               %li.right= link_to 'Write a post', new_blogr_post_path
             
             %li
-              %a.right{:href => "./#messages"} Conversations
+              %a.right{:href => "/chatrooms"} Conversations
             
             %li= link_to "@#{current_user.email.split("@").first}" , edit_user_registration_path , class: 'right'
              

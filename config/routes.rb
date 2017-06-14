@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
  
 
+  resources :chatrooms
+  
+  resources :chatrooms do 
+    resource :chatroom_users
+    resources :messages
+  end 
   get 'staffpick/index'
 
   get 'topstories/index'
