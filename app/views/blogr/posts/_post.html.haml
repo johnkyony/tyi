@@ -1,13 +1,32 @@
 %link{:href => "http://fonts.googleapis.com/css?family=Ubuntu", :rel => "stylesheet", :type => "text/css"}/
-.container.col-lg-12.main
-  .col-lg-12.post
-    .container
-      %h2
-        %p.ubuntu #{@post.title}
-      .body-text
-        %p.text-muted.ubuntu By #{@post.user.email} | #{@post.published_at}
-        %br/
-        .row
-          .col-lg-6
-            %p #{@post.body}
-            
+.row
+  .col.s12 
+    %main
+      %article#article_0.bp.bp_blogPost{"data-article-id" => "0", :itemscope => "", :itemtype => "http://schema.org/BlogPosting"}
+        %header.bp_header
+          .bp_img
+            %img{:alt => "One alone Wolf", :itemprop => "image", :src => "http://tyi.co.za/wp-content/uploads/2017/06/53324618untitled-640x724.png"}/
+          .bp_bar
+            %h1.bp_title{:itemprop => "name"}
+              %a{:href => "//codepen.io/wolf-w/pen/QbvXNR", :itemprop => "url"}#{@post.title}
+            .bp_subBar
+              %span.bp_author{:itemprop => "author"}
+                %a{:href => "//elementcode.de", :target => "_blank"} #{@post.user.email.split("@").first}
+              %time{:datetime => "2015-06-09T16:40:00+01:00", :itemprop => "datePublished"} #{@post.published_at}
+              .bp_nav_wrap
+                %i.bp_nav_trigger.fa.fa-ellipsis-v
+                %nav.bp_nav
+                  %ul
+                    %li.bp_post_comment
+                      %i.fa.fa-comment>
+                      Comment this post
+                    %li.bp_post_edit
+                      %i.fa.fa-pencil>
+                      Edit this post
+                    %li.bp_post_delete
+                      %i.fa.fa-ban>
+                      Delete this post
+          %meta{:content => "This is a awesome article about wolves and is crafted with magic and love.", :itemprop => "description"}/
+        .bp_content{:itemprop => "articleBody"}
+          %p.ubuntu  #{@post.body}
+         
