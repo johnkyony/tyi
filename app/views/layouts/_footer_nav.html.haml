@@ -17,10 +17,12 @@
             
             %li= link_to "@#{current_user.email.split("@").first}" , edit_user_registration_path , class: 'right'
              
-            %li= link_to "Sign out" , destroy_user_session_path ,  class: 'right' 
+            
+            %li= link_to 'Sign out', destroy_user_session_path, :method => :delete , class: "right"
           - else
-            %li= link_to 'Sign in ' , new_user_session_path, class: "right"
-            %li= link_to 'Register' , new_user_registration_path, class: "right"
+            #sign_in
+              %li= link_to 'Sign in' , new_user_session_path, class: "right"
+              %li= link_to 'Register' , new_user_registration_path, class: "right"
                          
   .footer-copyright
     .container

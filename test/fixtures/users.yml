@@ -21,6 +21,7 @@
 #  editors_role           :boolean          default("false")
 #  writers_role           :boolean          default("false")
 #  dev_role               :boolean          default("false")
+#  name                   :string
 #
 # Indexes
 #
@@ -34,8 +35,46 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+# one: {}
+# # column: value
+# #
+# two: {}
+# # column: value
+admin:
+  name:  Almighty Admin
+  email: admin@gmail.com
+  encrypted_password: <%= User.new.send(:password_digest, "topsecret") %>
+  superadmin_role: true
+  user_role: true
+
+user:
+  name: Simple User
+  email: user@gmail.com
+  encrypted_password: <%= User.new.send(:password_digest, "topsecret") %>
+  user_role: true
+
+john: 
+  name: John
+  email: jkyony@gmail.com
+  encrypted_password: <%= User.new.send(:password_digest, "topsecret") %>
+  superadmin_role : true
+  supervisor_role : true
+  user_role: true
+  writers_role: true
+  editors_role: true
+  dev_role: true
+  
+    
+lena:
+  name: Lena
+  email: lena@gmail.com
+  encrypted_password: <%= User.new.send(:password_digest, "topsecret") %>
+  writers_role: true
+  user_role: true
+
+glen:
+  name: Glen
+  email: glen@gmail.com
+  encrypted_password: <%= User.new.send(:password_digest, "topsecret") %>
+  editors_role: true
+  user_role: true

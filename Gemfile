@@ -43,12 +43,17 @@ gem 'rails_admin', '>= 1.0.0.rc'
 gem 'cancancan'
 gem 'simple_form'
 gem 'medium-editor-rails'
+gem "minitest"
 group :development do
+  
   gem 'guard'
   gem 'guard-livereload', '~> 2.5', require: false
   gem "rack-livereload"
   gem "better_errors"
   gem 'annotate'
+  gem "guard-minitest", :require => false
+  gem "rb-fsevent", :require => false
+  gem "terminal-notifier-guard", :require => false
 
 end
 source 'https://rails-assets.org' do
@@ -91,3 +96,21 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+group :test do
+  gem "capybara"
+  gem "connection_pool"
+  gem "launchy"
+  gem "minitest-reporters"
+  gem "mocha"
+  gem "poltergeist"
+  gem "shoulda-context"
+  gem "shoulda-matchers", ">= 3.0.1"
+ 
+end
+
+group :test do
+  gem 'minitest-rails'
+  gem 'minitest-rails-capybara'
+  gem 'minitest-focus'
+end

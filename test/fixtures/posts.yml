@@ -11,6 +11,7 @@
 #  user_id         :integer
 #  category_id     :integer
 #  category_tag_id :integer
+#  header_image    :string
 #
 # Indexes
 #
@@ -21,12 +22,19 @@
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  body: MyText
+sex:
+  header_image: "https://placeimg.com/640/480/grayscale"
+  title: "Underwear Sniffing: That’s a thing"
+  body: "There are many sexual fetishes around the world but did you know that people actually get it off by sniffing soiled underwear?Yep. That’s an actual thing.Bromidrophilia is the more scientific word for it which means: when an individual finds the natural body odors of a person to be the most arousing erotic stimulus imaginable.Urban Dictionary on the other hand gives a more explicit but easily understandable definition of a “Panty Sniffer”: “A person who sniffs women’s underwear for sexual gratification.”"
   published_at: 2017-05-25 14:00:08
+  user: john
+zuma:
+  header_image: "https://placeimg.com/640/480/grayscale"
+  title: "Zuma ain’t going anywhere"
+  body: "JOHANNESBURG – President Jacob Zuma has survived a second attempt to force him to step down in at the ANC’s national executive committee meeting on Sunday night, IOL reports.It was apparently agreed, as a compromise between bitterly divided groups to refer the issue of Zuma’s continued leadership to a committee of 10 members. The move to remove Zuma from office was seemingly deferred on procedural grounds.A source told Independent Media: “It was not decided how the committee would be formed. There was also no finalisation of its composition.”The motion against Zuma, who will face MPs on Wednesday for the presidency’s budget, was tabled by the ANC’s policy guru, Joel Netshitenzhe, on Saturday.The move was supported by Health Minister Aaron Motsoaledi and his deputy Joe Phaahla, axed tourism minister Derek Hanekom and NEC member Sue van der Merwe, according to sources."
+  published_at: 2017-05-25 14:00:08
+  user: lena
 
-two:
-  title: MyString
-  body: MyText
-  published_at: 2017-05-25 14:00:08
+
+
+

@@ -2,21 +2,21 @@
   %ul.slides
     - @posts.each do |post| 
       %li
-        %img{:src => "https://images.unsplash.com/photo-1464817739973-0128fe77aaa1?dpr=1&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop="}/
+        %img{:src => "#{post.header_image}"}/
         / random image
         .caption.right-align
           %h3.white-text= post.title
-          %h5.light.grey-text.text-lighten-3= truncate post.body, length: 50
+          %h5.light.grey-text.text-lighten-3= truncate post.body, length: 70
           = link_to "Read More" , blogr_post_path(post.id) , class: "btn waves-effect white grey-text darken-text-2"
           // %a.btn.waves-effect.white.grey-text.darken-text-2{:href => "/blogr/posts/#{post.id}"} Read More
     %li
-      %img{:src => "https://ununsplash.imgix.net/photo-1414849424631-8b18529a81ca?q=75&fm=jpg&s=0e993004a2f3704e8f2ad5469315ccb7"}/
+      %img{:src => "https://placeimg.com/640/480/sepia"}/
       / random image
       .caption.left-align
-        %h3 Left Aligned Caption
+        %h3.white-text Left Aligned Caption
         %h5.light.grey-text.text-lighten-3 Here's our small slogan.
     %li
-      %img{:src => "https://ununsplash.imgix.net/uploads/1413259835094dcdeb9d3/6e609595?q=75&fm=jpg&s=6a4fc66161293fc4a43a6ca6f073d1c5"}/
+      %img{:src => "https://placeimg.com/640/480/arch"}/
       / random image
       .caption.right-align
         %h3 Right Aligned Caption
@@ -25,3 +25,4 @@
   %a.close{:href => "#!"}
     %i.material-icons close
   / CarbonAds Zone Code
+  

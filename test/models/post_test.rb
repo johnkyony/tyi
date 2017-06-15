@@ -11,6 +11,7 @@
 #  user_id         :integer
 #  category_id     :integer
 #  category_tag_id :integer
+#  header_image    :string
 #
 # Indexes
 #

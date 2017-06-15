@@ -21,6 +21,7 @@
 #  editors_role           :boolean          default("false")
 #  writers_role           :boolean          default("false")
 #  dev_role               :boolean          default("false")
+#  name                   :string
 #
 # Indexes
 #
